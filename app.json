@@ -20,7 +20,16 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.lemontech.expo_content_intent"
+      "package": "com.lemontech.expo_content_intent",
+      "intentFilters": [
+        {
+          "action": "GET_CONTENT",
+          "data": {
+            "mimeType": "*/*"
+          },
+          "category": ["DEFAULT", "OPENABLE"]
+        }
+      ]
     },
     "web": {
       "favicon": "./assets/favicon.png"
