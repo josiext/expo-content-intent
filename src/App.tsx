@@ -1,11 +1,9 @@
 import { StatusBar } from "expo-status-bar";
 import {
-  Button,
   Image,
   ScrollView,
   StyleSheet,
   Text,
-  Touchable,
   TouchableOpacity,
   View,
 } from "react-native";
@@ -51,6 +49,20 @@ export default function App() {
         </Text>
       </View>
 
+      {intent?.action === "android.intent.action.MAIN" && (
+        <Text
+          style={{
+            alignSelf: "center",
+            textAlign: "center",
+            fontSize: 12,
+            color: "gray",
+          }}
+        >
+          Open this app from the File Picker using Gmail or any other app that
+          supports file picking.
+        </Text>
+      )}
+
       {intent?.action === "android.intent.action.GET_CONTENT" && (
         <View style={{ height: 120, gap: 4 }}>
           <Text style={{ alignSelf: "center", fontWeight: "bold" }}>
@@ -74,20 +86,6 @@ export default function App() {
             ))}
           </ScrollView>
         </View>
-      )}
-
-      {intent?.action === "android.intent.action.MAIN" && (
-        <Text
-          style={{
-            alignSelf: "center",
-            textAlign: "center",
-            fontSize: 12,
-            color: "gray",
-          }}
-        >
-          Open this app from the File Picker using Gmail or any other app that
-          supports file picking.
-        </Text>
       )}
 
       <StatusBar style="auto" />
