@@ -21,7 +21,6 @@ export default function App() {
 
   const handleSetFile = async (url: string) => {
     const res = await downloadFile(url);
-
     await setResult({ isOK: true, uris: [res.uri] });
   };
 
